@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:colegiostellamaris.cl)",
+      "WebFetch(domain:154.38.166.140)",
+      "Bash(sshpass -p 'X9xKS4L5TJAHQXNKBDI}' ssh -o StrictHostKeyChecking=no root@154.38.166.140 \"wp option get siteurl --path=/var/www/html 2>/dev/null || find / -name ''wp-config.php'' -type f 2>/dev/null | head -5\")",
+      "Bash(nmap -p 21,22,80,443,2082,2083,2086,2087,2222,7822,8080,8443 154.38.166.140)",
+      "Bash(nc -z -w2 154.38.166.140 22)",
+      "Bash(nc -z -w2 154.38.166.140 21)",
+      "Bash(nc -z -w2 154.38.166.140 80)",
+      "Bash(nc -z -w2 154.38.166.140 443)",
+      "Bash(curl -sk --max-time 10 \"https://colegiostellamaris.cl\")",
+      "Bash(curl -s --max-time 15 \"ftp://154.38.166.140/\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI}\")",
+      "Bash(curl -v --max-time 15 \"ftp://154.38.166.140/\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI}\")",
+      "Bash(curl -sk --max-time 15 \"https://154.38.166.140:2083/login/?login_only=1\" -d \"user=root@colegiostellamaris.cl&pass=X9xKS4L5TJAHQXNKBDI}\")",
+      "Bash(curl -sk --max-time 15 \"https://154.38.166.140:2083/login/?login_only=1\" -d \"user=root&pass=X9xKS4L5TJAHQXNKBDI}\")",
+      "Bash(curl -sk --max-time 15 -L \"https://154.38.166.140:2083/login/index.php\" -d \"username=root&password=X9xKS4L5TJAHQXNKBDI}&commit=Login\" -c /tmp/cwp_cookies -D /tmp/cwp_headers)",
+      "Bash(curl -sk --max-time 15 -L \"https://154.38.166.140:2083/login/index.php\" -d \"username=root&password=X9xKS4L5TJAHQXNKBDI}&commit=Login\" -c /tmp/cwp_cookies)",
+      "WebFetch(domain:web.archive.org)",
+      "Bash(curl -s --max-time 15 \"ftp://154.38.166.140/\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\")",
+      "Bash(curl -s --max-time 15 \"ftp://154.38.166.140/wp-content/uploads/\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\")",
+      "Bash(curl -s --max-time 15 \"ftp://154.38.166.140/wp-content/themes/\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\")",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm --no-turbopack)",
+      "Bash(npm install:*)",
+      "Bash(curl -s --max-time 30 \"ftp://154.38.166.140/wp-content/uploads/2021/12/cropped-Logo-stella2-e1640355264876.png\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" -o /Users/lighto/colegiosm/public/images/logo.png)",
+      "Bash(mkdir -p /Users/lighto/colegiosm/public/pdfs)",
+      "Bash(curl -s --max-time 30 \"ftp://154.38.166.140/wp-content/uploads/2025/08/Plan-de-formacion-ciudadana-2025.pdf\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" -o \"Plan-de-formacion-ciudadana-2025.pdf\")",
+      "Bash(curl -s --max-time 30 \"ftp://154.38.166.140/wp-content/uploads/2025/08/PROGRAMA-AFECTIVIDAD-SEXUALIDAD-Y-GENERO-2025.pdf\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" -o \"PROGRAMA-AFECTIVIDAD-SEXUALIDAD-Y-GENERO-2025.pdf\")",
+      "Bash(curl -s --max-time 30 \"ftp://154.38.166.140/wp-content/uploads/2025/08/PISE-plan-de-seguridad-2025.pdf\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" -o \"PISE-plan-de-seguridad-2025.pdf\")",
+      "Bash(curl -s --max-time 30 \"ftp://154.38.166.140/wp-content/uploads/2025/08/Plan-de-gestion-de-la-Convivencia-Escolar-2025.pdf\" --user \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" -o \"Plan-de-gestion-de-la-Convivencia-Escolar-2025.pdf\")",
+      "Bash(npx next:*)",
+      "Bash(pkill -f 'next dev')",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -s -u \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" ftp://154.38.166.140/public_html/wp-content/uploads/2025/ --list-only)",
+      "Bash(curl -s -u \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" \"ftp://154.38.166.140/public_html/wp-content/uploads/\" --list-only)",
+      "Bash(curl -v -u \"root@colegiostellamaris.cl:X9xKS4L5TJAHQXNKBDI\" \"ftp://154.38.166.140/\" --list-only)"
+    ]
+  }
+}
