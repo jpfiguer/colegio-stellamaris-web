@@ -1,3 +1,6 @@
+"use client";
+
+import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -47,6 +50,14 @@ const noticias = [
 ];
 
 export default function NewsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (dir: "left" | "right") => {
+    if (!scrollRef.current) return;
+    const amount = scrollRef.current.offsetWidth * 0.85;
+    scrollRef.current.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
   return (
     <section className="py-16 md:py-20">
       <div className="container-wide">
@@ -57,25 +68,64 @@ export default function NewsSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Mobile: horizontal scroll carousel */}
+        <div className="relative md:hidden">
+          <div
+            ref={scrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 -mx-4 px-4"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {noticias.map((n) => (
+              <Link
+                key={n.slug}
+                href={`/informaciones#${n.slug}`}
+                className="group snap-start flex-shrink-0 w-[75vw] glass rounded-2xl overflow-hidden ring-1 ring-primary/[0.05] flex flex-col"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src={n.image} alt={n.title} fill className="object-cover" />
+                </div>
+                <div className="p-4 flex-1 flex flex-col">
+                  <h3 className="font-heading font-bold text-ink text-sm leading-snug mb-1 line-clamp-2">
+                    {n.title}
+                  </h3>
+                  <p className="text-xs text-ink/40 line-clamp-2 flex-1">{n.excerpt}</p>
+                  <div className="mt-2 flex items-center justify-between">
+                    <span className="text-[9px] font-semibold text-ink/25 uppercase tracking-wider">{n.date}</span>
+                    <span className="text-[11px] text-primary font-semibold">Leer más</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Scroll arrows */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-0 top-1/3 -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-md rounded-full w-8 h-8 flex items-center justify-center z-10 border border-primary/10"
+            aria-label="Anterior"
+          >
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-0 top-1/3 -translate-y-1/2 bg-white/80 backdrop-blur-sm shadow-md rounded-full w-8 h-8 flex items-center justify-center z-10 border border-primary/10"
+            aria-label="Siguiente"
+          >
+            <svg className="w-4 h-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+          </button>
+        </div>
+
+        {/* Desktop: grid */}
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-5">
           {noticias.map((n) => (
             <Link
               key={n.slug}
               href={`/informaciones#${n.slug}`}
               className="group card-hover glass rounded-2xl overflow-hidden ring-1 ring-primary/[0.05] flex flex-col"
             >
-              {/* Image */}
               <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={n.image}
-                  alt={n.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <Image src={n.image} alt={n.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
-
-              {/* Content */}
               <div className="p-5 flex-1 flex flex-col">
                 <h3 className="font-heading font-bold text-ink group-hover:text-primary transition-colors line-clamp-2 mb-2 text-base leading-snug">
                   {n.title}
