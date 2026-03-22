@@ -87,8 +87,8 @@ export default function Header() {
         scrolled ? "h-0 opacity-0" : "opacity-100"
       }`}>
         <div className="bg-primary-dark/90 text-white/80 text-[10px] sm:text-xs">
-          <div className="container-wide py-1.5 sm:py-0 sm:h-9 flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-4 gap-y-0.5">
-            <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
+          <div className="container-wide py-1.5 sm:py-0 sm:h-9 flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-0.5 sm:gap-4 text-center sm:text-left">
+            <div className="flex items-center gap-2 sm:gap-4">
               <a href="tel:+56225587611" className="hover:text-white transition-colors flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(201,162,39,0.45)]" />
                 +56 2 2558 7611
