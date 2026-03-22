@@ -84,21 +84,21 @@ export default function Header() {
     }`}>
       {/* Top micro-bar */}
       <div className={`transition-all duration-500 overflow-hidden ${
-        scrolled ? "h-0 opacity-0" : "h-9 opacity-100"
+        scrolled ? "h-0 opacity-0" : "opacity-100"
       }`}>
-        <div className="bg-primary-dark/90 text-white/80 text-xs">
-          <div className="container-wide h-9 flex items-center justify-between">
-            <div className="flex items-center gap-4">
+        <div className="bg-primary-dark/90 text-white/80 text-[10px] sm:text-xs">
+          <div className="container-wide py-1.5 sm:py-0 sm:h-9 flex flex-wrap sm:flex-nowrap items-center justify-between gap-x-4 gap-y-0.5">
+            <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
               <a href="tel:+56225587611" className="hover:text-white transition-colors flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_8px_rgba(201,162,39,0.45)]" />
                 +56 2 2558 7611
               </a>
-              <span className="hidden sm:inline text-white/40">|</span>
-              <a href="mailto:contacto@colegiostellamaris.cl" className="hidden sm:inline hover:text-white transition-colors">
+              <span className="text-white/40">|</span>
+              <a href="mailto:contacto@colegiostellamaris.cl" className="hover:text-white transition-colors">
                 contacto@colegiostellamaris.cl
               </a>
             </div>
-            <span className="hidden md:inline text-accent font-semibold tracking-wide text-[10px] uppercase">
+            <span className="text-accent font-semibold tracking-wide text-[9px] sm:text-[10px] uppercase">
               Colegio Científico Humanista · CON SEP / SIN PIE
             </span>
           </div>
