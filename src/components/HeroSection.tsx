@@ -32,7 +32,7 @@ export default function HeroSection() {
   const slide = slides[current];
 
   return (
-    <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden">
+    <section className="relative h-[75vh] md:h-[70vh] flex items-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image src="/images/hero-bg.png" alt="" fill className="object-cover scale-105" priority />
