@@ -1,0 +1,24 @@
+{
+  "name": "Colegio Stella Maris",
+  "short_name": "Stella Maris",
+  "description": "Complejo Educacional Stella Maris - Formación integral, inclusiva y de calidad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#0a4da6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
