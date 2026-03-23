@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import InstallButton from "@/components/InstallButton";
 
 interface MenuItem {
   label: string;
@@ -151,6 +152,7 @@ export default function Header() {
               )}
             </div>
           ))}
+          <InstallButton className={`ml-2 px-3 py-2 rounded-xl transition-colors ${scrolled ? "text-primary bg-primary/5 hover:bg-primary/10" : "text-accent bg-white/10 hover:bg-white/15"}`} />
         </nav>
 
         {/* Mobile toggle */}
@@ -185,6 +187,9 @@ export default function Header() {
               )}
             </div>
           ))}
+          <div className="pt-2 mt-2 border-t border-primary/10">
+            <InstallButton className="w-full px-3 py-3 rounded-xl text-primary bg-primary/5 hover:bg-primary/10 transition-colors justify-center" />
+          </div>
         </div>
       </div>
     </header>
