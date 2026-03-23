@@ -49,6 +49,7 @@ export default function RootLayout({
       <head>
         <link rel="apple-touch-icon" href="/images/logo.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer />
       </head>
       <body className="antialiased min-h-screen text-ink">
         <Header />
