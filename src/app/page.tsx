@@ -8,7 +8,7 @@ import TalleresSection from "@/components/TalleresSection";
 import MisionVision from "@/components/MisionVision";
 import BannersSection from "@/components/BannersSection";
 import ValuesSection from "@/components/ValuesSection";
-import VideoSection from "@/components/VideoSection";
+// import VideoSection from "@/components/VideoSection";
 import FAQSection from "@/components/FAQSection";
 import ScrollReveal from "@/components/ScrollReveal";
 
@@ -54,10 +54,6 @@ export default function HomePage() {
 
       <ScrollReveal>
         <ValuesSection />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <VideoSection />
       </ScrollReveal>
 
       <ScrollReveal>
