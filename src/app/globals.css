@@ -190,6 +190,12 @@ h6 {
   border-radius: inherit;
 }
 
+/* Fade in modal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
 /* Float — respeta reduced motion */
 @keyframes float {
   0%,
