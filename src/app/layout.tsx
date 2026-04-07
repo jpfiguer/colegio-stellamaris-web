@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceWorker from "@/components/ServiceWorker";
 import OneSignalInit from "@/components/OneSignalInit";
-import SemanaSantaModal from "@/components/SemanaSantaModal";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -58,7 +57,6 @@ export default function RootLayout({
         <Footer />
         <ServiceWorker />
         <OneSignalInit />
-        <SemanaSantaModal />
       </body>
     </html>
   );
