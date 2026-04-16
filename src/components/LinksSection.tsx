@@ -24,6 +24,13 @@ const enlaces = [
     color: "from-accent-dark to-accent",
     internal: true,
   },
+  {
+    label: "Cuenta Pública 2025",
+    href: "/pdfs/cuenta-publica-2025.pdf",
+    icon: "document",
+    color: "from-red-600 to-red-500",
+    highlight: true,
+  },
 ];
 
 function LinkIcon({ name }: { name: string }) {
@@ -37,6 +44,8 @@ function LinkIcon({ name }: { name: string }) {
       return <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>;
     case "palette":
       return <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" /></svg>;
+    case "document":
+      return <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>;
     default:
       return null;
   }
@@ -52,14 +61,14 @@ export default function LinksSection() {
             Enlaces <span className="text-gradient-brand">importantes</span>
           </h2>
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
           {enlaces.map((e) => (
             <a
               key={e.label}
               href={e.href}
               target={e.internal ? undefined : "_blank"}
               rel={e.internal ? undefined : "noopener noreferrer"}
-              className="group card-hover glass rounded-2xl p-5 text-center ring-1 ring-primary/[0.05]"
+              className={`group card-hover glass rounded-2xl p-5 text-center ring-1 ${(e as Record<string,unknown>).highlight ? "ring-red-500/20 bg-red-50/30" : "ring-primary/[0.05]"}`}
             >
               <div
                 className={`w-12 h-12 rounded-xl bg-gradient-to-br ${e.color} text-white flex items-center justify-center mx-auto mb-3 shadow-sm transition-transform duration-400 group-hover:scale-105`}
